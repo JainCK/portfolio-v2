@@ -1,10 +1,18 @@
+import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
-import Image from "next/image";
+import { Projects } from "@/components/projects";
+import { Skills } from "@/components/skills";
+
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Hero />
-    </div>
+      <About />
+      <Skills />
+      {/* <Projects /> */}
+      <Contact />
+    </>
   );
 }
