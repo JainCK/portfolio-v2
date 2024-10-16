@@ -18,7 +18,7 @@ const skills: Skill[] = [
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-background text-foreground">
+    <section id="skills" className="py-20 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

@@ -2,14 +2,14 @@ import React from 'react';
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 bg-background text-foreground">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-8">About Me</h2>
+        <h2 className="text-4xl font-bold text-center text-white mb-8">About Me</h2>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <img src="/images/profile.jpg" alt="Profile" className="rounded-full w-48 h-48 mx-auto md:mx-0" />
           </div>
-          <div className="md:w-1/2 md:pl-12">
+          <div className="md:w-1/2 md:pl-12 text-white">
             <p className="text-lg mb-4">
               Hello! I'm a Full-Stack Developer with a passion for building modern and responsive web applications. With a strong foundation in both front-end and back-end technologies, I enjoy creating seamless user experiences and efficient, scalable solutions.
             </p>
