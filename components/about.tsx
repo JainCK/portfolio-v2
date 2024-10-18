@@ -1,10 +1,13 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export const About = () => {
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-white mb-8">About Me</h2>
+      <h2
+          className="text-3xl font-bold mb-8 text-center text-white"
+        > About Me</h2>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <img src="/images/profile.jpg" alt="Profile" className="rounded-full w-48 h-48 mx-auto md:mx-0" />

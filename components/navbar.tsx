@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Navbar = () => {
   return (
-    <nav className="p-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50 text-white">
+    <nav className="px-24 py-10 flex justify-between items-center fixed top-0 left-0 right-0 z-50 text-white">
       <div className="text-2xl font-bold">@jain</div>
       <ul className="flex space-x-4">
         <li><a href="#about" className="hover:underline">About</a></li>

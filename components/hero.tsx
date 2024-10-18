@@ -1,15 +1,21 @@
 "use client";
 
 import Particles from '@/components/ui/particles';
+import { motion } from 'framer-motion';
 
 export const Hero = () => {
   let color = "#ffffff"
-
+// bg-gradient-to-b from-gray-900 to-gray-700
 
   return (
 
-    <div className="relative flex flex-col h-screen justify-center bg-gradient-to-b from-gray-900 to-gray-700 overflow-hidden border md:shadow-xl">
-      {/* <div className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-100/80 bg-clip-text text-center text-4xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"> */}
+    <div className="relative flex flex-col h-screen justify-center bg-slate-950 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3 }}
+        className="text-center"
+      >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-yellow-500 text-left pl-10">
           Hello,<br />
           I'm Jain, <br />
@@ -19,10 +25,10 @@ export const Hero = () => {
           Passionate about crafting interactive digital experiences for web and app platforms, based in India
         </p>
         <div className='pl-10'></div>
-      {/* </div> */}
-      <Particles
+        </motion.div>
+        <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={500}
         ease={80}
         color={color}
         refresh
