@@ -1,100 +1,62 @@
-import React from 'react';
-import IconCloud from "@/components/ui/icon-cloud";
+"use client"
 
-const slugs = [
-  "typescript",
-  "javascript",
-  "dart",
-  "java",
-  "react",
-  "flutter",
-  "android",
-  "html5",
-  "css3",
-  "nodedotjs",
-  "express",
-  "nextdotjs",
-  "prisma",
-  "amazonaws",
-  "postgresql",
-  "firebase",
-  "nginx",
-  "vercel",
-  "testinglibrary",
-  "jest",
-  "cypress",
-  "docker",
-  "git",
-  "jira",
-  "github",
-  "gitlab",
-  "visualstudiocode",
-  "androidstudio",
-  "sonarqube",
-  "figma",
-];
-
-export function IconCloudDemo() {
-  return (
-    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg px-20 pb-20 pt-8 ">
-      <IconCloud iconSlugs={slugs} />
-    </div>
-  );
-}
-
-interface Skill {
-  name: string;
-}
-
-const languages: Skill[] = [
-  { name: 'JavaScript'},
-  { name: 'TypeScript' },
-  { name: 'HTML' },
-  { name: 'CSS'},
-];
-
-const technologies: Skill[] = [
-  { name: 'React' },
-  { name: 'Node.js' },
-  { name: 'Git' },
-  { name: 'Docker' },
-];
+import React, { useRef } from 'react';
+import { LazyMotion, domAnimation, useInView } from 'framer-motion';
+import { TECHNOLOGIES } from './skill';
 
 export const Skills = () => {
+  const textRef = useRef(null);
+  const stackRef = useRef(null);
+  const isTextInView = useInView(textRef, { once: true });
+  const isStackInView = useInView(stackRef, { once: true });
+
   return (
-    <section id="skills" className="py-20 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-8">Skills</h2>
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <IconCloudDemo />
-          </div>
-          <div className="w-full md:w-2/3 md:pl-12">
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Languages</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {languages.map((skill) => (
-                    <div key={skill.name} className="flex flex-col items-center">
-                      <p className="text-lg font-semibold">{skill.name}</p>
+    <LazyMotion features={domAnimation}>
+      <section id="skills" className="py-20 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-8">Skills</h2>
+          <p
+            ref={textRef}
+            className="my-5 text-xl"
+            style={{
+              transform: isTextInView ? 'none' : 'translateX(-200px)',
+              opacity: isTextInView ? 1 : 0,
+              transition: 'all 0.9s ease-out 0.5s'
+            }}
+          >
+            I work with the following technologies and tools:
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+            {TECHNOLOGIES.map((tech, index) => (
+              <div
+                key={tech.category}
+                ref={stackRef}
+                className="flex flex-col gap-4"
+                style={{
+                  transform: isStackInView
+                    ? 'none'
+                    : `translateY(${200 / (index + 1)}px)`,
+                  opacity: isStackInView ? 1 : 0,
+                  transition: `all 0.9s ease-out ${0.5 * index}s`
+                }}
+              >
+                <h3 className="text-lg font-semibold">{tech.category}</h3>
+                <div className="flex items-center flex-wrap gap-x-5 gap-y-8">
+                  {tech.items.map(item => (
+                    <div key={item.name} className="group relative flex">
+                      <span role="img" className="text-4xl">{item.icon && <item.icon />}</span>
+                      <span className="group-hover:opacity-100 transition-opacity bg-gray-800 text-lg text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 mt-3 px-2 w-max">
+                        {item.name}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Technologies</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {technologies.map((skill) => (
-                    <div key={skill.name} className="flex flex-col items-center">
-                      <p className="text-lg font-semibold">{skill.name}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </LazyMotion>
   );
 };
