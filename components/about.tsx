@@ -1,30 +1,33 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Footer } from './footer';
 
 export const About = () => {
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
-      <h2
-          className="text-3xl font-bold mb-8 text-center text-white"
-        > About Me</h2>
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <img src="/images/profile.jpg" alt="Profile" className="rounded-full w-48 h-48 mx-auto md:mx-0" />
-          </div>
-          <div className="md:w-1/2 md:pl-12 text-white">
-            <p className="text-lg mb-4">
-              Hello! I'm a Full-Stack Developer with a passion for building modern and responsive web applications. With a strong foundation in both front-end and back-end technologies, I enjoy creating seamless user experiences and efficient, scalable solutions.
+    <>
+      <section id="about" className="min-h-screen py-12 text-white">
+        <div className="max-w-screen-lg mx-auto px-6">  {/* Increased container width */}
+          <h2 className="text-4xl font-extrabold mb-8 text-center">About Me</h2>
+
+          <motion.div
+            className="text-xl leading-loose" 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <p>
+              Welcome to my corner of the web! I'm Jain, a passionate developer with a solid background in computer science, having completed a Bachelor's in Computer Application (2018-2021) and currently pursuing a Master's in Computer Application (2023-present).
+              I have experience working at Tata Consultancy Services, where I collaborated with Ernst & Young on various projects. My role as an Application Support/Developer (Feb 2022 - Jun 2023) involved working with technologies such as Azure, SQL, SSIS, SSRS, ServiceNow, PowerBI, and .NET, where I helped resolve complex issues and ensure successful project deliveries.
+              <br /><br />
+              I thrive on solving problems, exploring new technologies, and continuously expanding my skill set. Whether it's diving into the latest frameworks or working on challenging projects, I'm always looking for opportunities to grow as a developer.
+              Looking forward, I aim to specialize in cutting-edge web and app development, leveraging my skills to contribute to impactful projects and innovative solutions. If you're interested in collaborating or discussing how I can assist with your next venture, feel free to reach out. Let's build something incredible together!
             </p>
-            <p className="text-lg mb-4">
-              I have experience working with a variety of programming languages and frameworks, including JavaScript, TypeScript, React, Node.js, and more. I am always eager to learn new technologies and improve my skills.
-            </p>
-            <p className="text-lg">
-              When I'm not coding, you can find me exploring new places, reading tech blogs, or working on personal projects. I'm always open to new opportunities and collaborations, so feel free to reach out!
-            </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </>
   );
 };
