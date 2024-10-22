@@ -1,7 +1,9 @@
 import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
+import { Footer } from "@/components/footer";
 
 
 export default function Home() {
@@ -10,9 +12,13 @@ export default function Home() {
       <Hero />
       <div className="section-divider" />
       <Projects />
+      <div className="section-divider" />
       <Skills />
       <div className="section-divider" />
       <About />
+      <div className="section-divider" />
+      <Contact />
+      <Footer />
     </>
   );
 }
