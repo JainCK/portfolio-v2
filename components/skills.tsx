@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { LazyMotion, domAnimation, useInView } from 'framer-motion';
-import { TECHNOLOGIES } from './skill';
+import { TECHNOLOGIES } from '../lib/skill';
 
 export const Skills = () => {
   const textRef = useRef(null);
