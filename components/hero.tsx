@@ -2,6 +2,7 @@
 
 import Particles from '@/components/ui/particles';
 import { motion } from 'framer-motion';
+import HyperText from './ui/hyper-text';
 
 export const Hero = () => {
   let color = "#ffffff"
@@ -16,13 +17,17 @@ export const Hero = () => {
         transition={{ duration: 3 }}
         className="text-center"
       >
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-yellow-500 text-left pl-10">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-500 text-left pl-10">
           Hello,<br />
           I'm Jain, <br />
-          Full-Stack Developer
+          <HyperText
+      className="text-3xl font-bold text-white"
+      text="Full-Stack Developer"
+    />
+          
         </h1>
         <p className="text-lg sm:text-md md:text-lg mt-1 font-light text-gray-300 text-left pl-10">
-          Passionate about crafting interactive digital experiences for web and app platforms, based in India
+          Passionate about crafting interactive digital experiences for web and app platforms, based in India 
         </p>
         <div className='pl-10'></div>
         </motion.div>
