@@ -15,7 +15,7 @@ const GET_PINNED_PROJECTS = gql`
               name
               description
               url
-              repositoryTopics(first: 5) {
+              repositoryTopics(first: 10) {
                 edges {
                   node {
                     topic {
