@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import React, { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { motion } from 'framer-motion';
 import { FaGithub } from "react-icons/fa";
 
+// GraphQL query to get pinned projects
 const GET_PINNED_PROJECTS = gql`
   query {
     user(login: "JainCK") {
@@ -33,11 +34,12 @@ const GET_PINNED_PROJECTS = gql`
   }
 `;
 
-const ProjectsList = () => {
+// Component to list the pinned projects
+const ProjectsList: React.FC = () => {
   const { loading, error, data } = useQuery(GET_PINNED_PROJECTS);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   const pinnedProjects = data.user.pinnedItems.edges;
 
@@ -54,7 +56,7 @@ const ProjectsList = () => {
           <div className='flex justify-between'>
             <h3 className="text-xl font-bold mb-2">{project.node.name.toUpperCase()}</h3>
             <a href={project.node.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-xl">
-            <FaGithub />
+              <FaGithub />
             </a>
           </div>
           <ProjectDescription description={project.node.description} />
@@ -71,7 +73,8 @@ const ProjectsList = () => {
   );
 };
 
-const ProjectDescription = ({ description }: { description: string | null }) => {
+// Component to show project description with expandable text
+const ProjectDescription: React.FC<{ description: string | null }> = ({ description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   
   if (!description) {
@@ -96,13 +99,14 @@ const ProjectDescription = ({ description }: { description: string | null }) => 
   );
 };
 
-export const Projects = () => {
+// Main Projects component
+export const Projects: React.FC = () => {
   return (
-      <section id="projects" className="py-10 text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8 text-white">Projects</h2>
-          <ProjectsList />
-        </div>
-      </section>
+    <section id="projects" className="py-10 text-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl font-bold text-center mb-8 text-white">Projects</h2>
+        <ProjectsList />
+      </div>
+    </section>
   );
 };

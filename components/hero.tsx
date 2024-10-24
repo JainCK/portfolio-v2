@@ -19,7 +19,7 @@ export const Hero = () => {
       >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-500 text-left pl-10">
           Hello,<br />
-          I'm Jain, <br />
+          I&apos;m Jain, <br />
           <HyperText
       className="text-3xl font-bold text-white"
       text="Full-Stack Developer"
