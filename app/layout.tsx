@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 overflow-y-scroll overflow-x-hidden px-24`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 overflow-y-scroll overflow-x-hidden px-4 sm:px-24`}
       >
         <ApolloWrapper>
           <Navbar />
