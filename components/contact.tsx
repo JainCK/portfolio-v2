@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import CalendlyForm from './calendlyForm';
 
 export const Contact = () => {
   const formRef = useRef(null);
@@ -83,7 +84,7 @@ export const Contact = () => {
             className="bg-gray-800 p-8 rounded-md"
           >
             <h3 className="text-lg font-semibold mb-4">Book an Appointment</h3>
-            <div className="calendly-inline-widget" data-url="https://calendly.com/your-calendly-link" style={{ minWidth: '320px', height: '330px' }}></div>
+            <CalendlyForm />
           </motion.div>
         </div>
       </div>
