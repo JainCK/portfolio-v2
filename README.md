@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+This is a personal portfolio website designed to showcase my projects, skills, and professional background. The website is built using modern technologies and integrates with the GitHub GraphQL API to dynamically fetch and display my projects.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js:** Framework used for both frontend and backend rendering with server-side support.
+- **Tailwind CSS:** For modern, responsive, and customizable styling.
+- **GitHub GraphQL API:** Used to fetch project details dynamically from my GitHub repositories.
+- **Apollo Client:** For managing data fetching from the GitHub GraphQL API.
+- **React Icons:** Provides scalable vector icons that integrate seamlessly with React.
+- **MagicUI:** A lightweight UI framework for seamless animations and interactions.
+- **SCDCN:** Utilized for advanced state management across components.
+- **React Icons:** For adding easily customizable icons throughout the site.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Dynamic Project Display:** Integrates with GitHub's GraphQL API to automatically pull in and display project details, keeping the portfolio up-to-date.
+- **Responsive Design:** Ensures optimal viewing experience across devices, powered by Tailwind CSS.
+- **Professional UI/UX:** Built to highlight key details in a clean, modern, and aesthetically pleasing way, with MagicUI enhancing interactive animations.
+- **Iconography:** Uses React Icons to visually represent skills, tools, and technologies.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Sections
 
-## Learn More
+- **About Me:** A detailed introduction of my professional background, skills, and experiences.
+- **Projects:** A dynamic showcase of my top GitHub projects, fetched using GitHub's GraphQL API and Apollo Client.
+- **Skills:** A categorized list of my technical skills, represented with React Icons.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-portfolio.git
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3. Set up environment variables:
+    - Add your GitHub token in a `.env.local` file:
+      ```bash
+      NEXT_PUBLIC_GITHUB_TOKEN=your_github_personal_access_token
+      ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Visit `http://localhost:3000` to view the portfolio in the browser.
+
+## Deployment
+
+This project can be deployed on any static site hosting platform, such as Vercel or Netlify. For optimal integration with Next.js, deploying on **Vercel** is recommended.
+
+---
+
+Feel free to explore, fork, or contribute to the repository!
