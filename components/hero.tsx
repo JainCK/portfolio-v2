@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 import HyperText from './ui/hyper-text';
 
 export const Hero = () => {
-  let color = "#ffffff"
-// bg-gradient-to-b from-gray-900 to-gray-700
+  const color = "#ffffff"
 
   return (
 
