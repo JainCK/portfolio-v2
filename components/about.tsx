@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import ResumeButton from './ui/resumeBtn';
 
 export const About = () => {
   return (
@@ -28,6 +29,9 @@ export const About = () => {
               I thrive on solving problems, exploring new technologies, and continuously expanding my skill set. Whether it's diving into the latest frameworks or working on challenging projects, I'm always looking for opportunities to grow as a developer. My passion for learning and self-improvement drives me to stay updated with the latest industry trends and advancements. Looking forward, I aim to specialize in cutting-edge web and app development, leveraging my skills to contribute to impactful projects and innovative solutions. If you're interested in collaborating or discussing how I can assist with your next venture, feel free to reach out. Let's build something incredible together!
             </p>
           </motion.div>
+          <div className="mt-8 text-center"> {/* Added margin and center alignment for the button */}
+            <ResumeButton />
+          </div>
         </div>
       </section>
     </>
