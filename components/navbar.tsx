@@ -13,14 +13,14 @@ export const Navbar = () => {
         <li><a href="#about" className="hover:underline">About</a></li>
       </ul>
       <div className="flex space-x-2 text-xl md:text-2xl">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <PiTwitterLogoFill />
+        <a href="https://twitter.com/jain_kuriakose" target="_blank" rel="noopener noreferrer">
+        <PiTwitterLogoFill />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-          <FaLinkedinIn />
+        <a href="https://www.linkedin.com/in/jainck" target="_blank" rel="noopener noreferrer">
+        <FaLinkedinIn />
         </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
+        <a href="https://github.com/JainCK" target="_blank" rel="noopener noreferrer">
+        <FaGithub/ >
         </a>
       </div>
     </nav>
