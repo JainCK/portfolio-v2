@@ -4,7 +4,7 @@ import Particles from "@/components/ui/particles";
 import { motion } from "framer-motion";
 
 export const Hero = () => {
-  const color = "#ffffff";
+  const color = "#000000";
 
   return (
     <div className="relative flex flex-col h-screen justify-center bg-white overflow-hidden">
@@ -27,7 +27,7 @@ export const Hero = () => {
         className="absolute inset-0"
         quantity={500}
         ease={80}
-        color={"#000000"}
+        color={color}
         refresh
       />
     </div>
