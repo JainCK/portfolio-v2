@@ -48,7 +48,7 @@ export const Skills = () => {
                       <span role="img" className="text-4xl">
                         {item.icon && <item.icon />}
                       </span>
-                      <span className="group-hover:opacity-100 transition-opacity bg-gray-800 text-lg text-black rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 mt-3 px-2 w-max">
+                      <span className="group-hover:opacity-100 transition-opacity bg-gray-800 text-lg text-white rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 mt-3 px-2 w-max">
                         {item.name}
                       </span>
                     </div>

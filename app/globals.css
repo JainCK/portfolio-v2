@@ -68,6 +68,9 @@
     --color-5: 90 100% 63%;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 @layer base {
   * {
     @apply border-border;
