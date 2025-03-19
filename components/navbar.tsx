@@ -5,7 +5,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
-    <nav className="anton-regular px-24 py-10 hidden md:flex justify-between items-center fixed top-0 left-0 right-0 z-50 text-black">
+    <nav className="anton-regular px-24 py-10 hidden md:flex justify-between items-center fixed top-0 left-0 right-0 z-50 text-white">
       <div className="text-2xl font-bold">@jain</div>
       <ul className="hidden md:flex space-x-4">
         <li>

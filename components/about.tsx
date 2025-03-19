@@ -3,11 +3,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ResumeButton from "./ui/resumeBtn";
+import { BackgroundLines } from "./ui/background-lines";
 
 export const About = () => {
   return (
     <>
-      <section id="about" className="min-h-screen py-12 text-black">
+      <section id="about" className="min-h-screen py-12 text-white">
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-xl font-extrabold mb-6 text-center">
             About Me

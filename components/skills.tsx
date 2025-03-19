@@ -12,7 +12,7 @@ export const Skills = () => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <section id="skills" className="py-20 text-black">
+      <section id="skills" className="py-20 text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8">Skills</h2>
           <p

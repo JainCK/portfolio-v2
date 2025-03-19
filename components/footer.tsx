@@ -5,9 +5,9 @@ import { FaLinkedinIn } from "react-icons/fa";
 export const Footer = () => {
   return (
     <footer className="py-6 mb-20">
-      <div className="container mx-auto px-4 text-center text-black">
+      <div className="container mx-auto px-4 text-center text-white">
         <p className="text-lg mb-4">
-          © 2024-25 Jain&apos;s Portfolio. All rights reserved.
+          © 2025-26 Jain&apos;s Portfolio. All rights reserved.
         </p>
         <div className="flex justify-center space-x-4 text-3xl">
           <a
