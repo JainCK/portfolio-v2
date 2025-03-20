@@ -57,7 +57,7 @@ export function Button({
 
       <div
         className={cn(
-          "relative bg-slate-900/[0.] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+          "relative bg-slate-900/[0.] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-5xl text-sm antialiased",
           className
         )}
         style={{
@@ -106,7 +106,7 @@ export const MovingBorder = ({
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "row" }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
@@ -135,6 +135,6 @@ export const MovingBorder = ({
       >
         {children}
       </motion.div>
-    </>
+    </div>
   );
 };
