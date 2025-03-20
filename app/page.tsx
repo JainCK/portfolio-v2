@@ -4,17 +4,23 @@ import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 import { Footer } from "@/components/footer";
 import Experience from "@/components/experience";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
+    <main className="relative flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+      <div className="w-9/10">
+        <Navbar />
         <Hero />
         <Projects />
         <Skills />
-        <About />
         <Experience />
+        <About />
         <Footer />
+        <ShootingStars />
+        <StarsBackground />
       </div>
     </main>
   );
