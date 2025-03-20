@@ -2,8 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import ResumeButton from "./ui/resumeBtn";
-import { BackgroundLines } from "./ui/background-lines";
 
 export const About = () => {
   return (
@@ -55,9 +53,6 @@ export const About = () => {
               incredible together!
             </p>
           </motion.div>
-          <div className="mt-8 text-center">
-            <ResumeButton />
-          </div>
         </div>
       </section>
     </>

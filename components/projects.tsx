@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { FaGithub } from "react-icons/fa";
@@ -44,38 +44,46 @@ const ProjectsList: React.FC = () => {
   const pinnedProjects = data.user.pinnedItems.edges;
 
   return (
-    <BentoGrid className="max-w-7xl mx-auto bg-slate-950">
-      {pinnedProjects.map((project: any, i: any) => (
-        <BentoGridItem
-          key={project.node.id}
-          title={project.node.name.toUpperCase()}
-          description={project.node.description}
-          header={
-            <div className="mb-1">
-              {project.node.repositoryTopics.edges.map((topicEdge: any) => (
-                <span
-                  key={topicEdge.node.topic.name}
-                  className="inline-block bg-slate-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
-                >
-                  {topicEdge.node.topic.name.toUpperCase()}
-                </span>
-              ))}
-            </div>
-          }
-          icon={
-            <a
-              href={project.node.url}
-              target="__blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-xl text-xl font-normal text-white"
-            >
-              <FaGithub className="" />
-            </a>
-          }
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
-    </BentoGrid>
+    <>
+      <BentoGrid className="max-w-7xl mx-auto bg-slate-950">
+        {pinnedProjects.map((project: any, i: any) => (
+          <BentoGridItem
+            key={project.node.id}
+            title={project.node.name.toUpperCase()}
+            description={
+              <ProjectDescription description={project.node.description} />
+            }
+            header={
+              <div className="mb-1">
+                {project.node.repositoryTopics.edges.map((topicEdge: any) => (
+                  <span
+                    key={topicEdge.node.topic.name}
+                    className="inline-block bg-slate-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
+                  >
+                    {topicEdge.node.topic.name.toUpperCase()}
+                  </span>
+                ))}
+              </div>
+            }
+            icon={
+              <a
+                href={project.node.url}
+                target="__blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl text-xl font-normal text-white"
+              >
+                <FaGithub className="" />
+              </a>
+            }
+            className={
+              i === 3 || i === 6
+                ? "md:col-span-2 relative overflow-hidden"
+                : "relative overflow-hidden"
+            }
+          ></BentoGridItem>
+        ))}
+      </BentoGrid>
+    </>
   );
 };
 

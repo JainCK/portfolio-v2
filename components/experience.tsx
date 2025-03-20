@@ -1,15 +1,14 @@
-import React from "react";
 import { workExperience } from "@/data";
 import { Button } from "@/components/ui/moving-border";
 
 const Experience = () => {
   return (
     <div className="py-20 h-auto w-full bg-slate-950" id="experience">
-      <h1 className="heading">
-        My <span className="text-white">work experience</span>
-      </h1>
+      <p className=" text-white text-center text-xl font-bold">
+        My Work Experience
+      </p>
 
-      <div className="w-full max-h-full mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="w-6xl max-h-full mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {workExperience.map((card) => (
           <Button
             key={card.id}
