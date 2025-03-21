@@ -3,9 +3,6 @@ import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 import { Footer } from "@/components/footer";
-import Experience from "@/components/experience";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {
@@ -16,11 +13,8 @@ export default function Home() {
         <Hero />
         <Projects />
         <Skills />
-        <Experience />
         <About />
         <Footer />
-        <ShootingStars />
-        <StarsBackground />
       </div>
     </main>
   );

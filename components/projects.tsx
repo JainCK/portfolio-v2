@@ -75,12 +75,8 @@ const ProjectsList: React.FC = () => {
                 <FaGithub className="" />
               </a>
             }
-            className={
-              i === 3 || i === 6
-                ? "md:col-span-2 relative overflow-hidden"
-                : "relative overflow-hidden"
-            }
-          ></BentoGridItem>
+            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+          />
         ))}
       </BentoGrid>
     </>

@@ -8,51 +8,44 @@ export const About = () => {
     <>
       <section id="about" className="min-h-screen py-12 text-white">
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-xl font-extrabold mb-6 text-center">
-            About Me
-          </h2>{" "}
-          {/* Increased heading size for better visibility on mobile */}
-          <motion.div
-            className="text-base sm:text-md leading-loose"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <p className="mb-4">
-              Welcome to my corner of the web! I&apos;m Jain, a passionate
-              developer with a solid background in computer science, having
-              completed a Bachelor&apos;s in Computer Application (2018-2021)
-              and currently pursuing a Master&apos;s in Computer Application
-              (2023-present). This educational foundation has provided me with a
-              strong understanding of computer systems, algorithms, and software
-              engineering principles.
-            </p>
-            <p className="mb-4">
-              I have experience working at Tata Consultancy Services, where I
-              collaborated with Ernst &amp; Young on various projects. My role
-              as an Application Support/Developer (Feb 2022 - Jun 2023) involved
-              working with technologies such as Azure, SQL, SSIS, SSRS,
-              ServiceNow, PowerBI, and .NET, where I helped resolve complex
-              issues and ensure successful project deliveries. This experience
-              has given me a unique perspective on the importance of effective
-              communication, teamwork, and adaptability in fast-paced project
-              environments.
-            </p>
-            <p className="mb-4">
-              I thrive on solving problems, exploring new technologies, and
-              continuously expanding my skill set. Whether it&apos;s diving into
-              the latest frameworks or working on challenging projects, I&apos;m
-              always looking for opportunities to grow as a developer. My
-              passion for learning and self-improvement drives me to stay
-              updated with the latest industry trends and advancements. Looking
-              forward, I aim to specialize in cutting-edge web and app
-              development, leveraging my skills to contribute to impactful
-              projects and innovative solutions. If you&apos;re interested in
-              collaborating or discussing how I can assist with your next
-              venture, feel free to reach out. Let&apos;s build something
-              incredible together!
-            </p>
-          </motion.div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-8 text-center">
+            Here is a Whole Page About Me
+          </h2>
+          <div className="flex flex-col md:flex-row items-center justify-center">
+            <div className=" mb-8 md:mb-0">
+              <motion.div
+                className="text-base sm:text-lg leading-relaxed"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <h3>Me talking about myself</h3>
+                <p className="mb-4">
+                  I&apos;m Jain, a full-stack developer whose curious about
+                  finding ways to make the web a better place. I&apos;m from
+                  India as you noticed from my hero page.
+                </p>
+                <p className="mb-4">
+                  I already completed my bachelors and currently on my masters
+                  in computer application. I mostly work on nodejs, typescript,
+                  and react, but I&apos;m always open to learn new things.
+                  Thinking about jumping to golang and rust or context switching
+                  to mobile and game development.
+                </p>
+                <p className="mb-4">
+                  There&apos;s always something new to learn, and I&apos;m
+                  always looking for new opportunities to learn and grow.
+                  I&apos;m always open to new opportunities and challenges.
+                  Being a curious-driven developer, I&apos;m always looking for
+                  new ways to solve problems. Let&apos;s connect and build
+                  something amazing together!
+                </p>
+                <p className="mb-4">
+                  Let&apos;s connect and build something amazing together!
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
     </>

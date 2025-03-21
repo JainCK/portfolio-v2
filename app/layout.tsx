@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-slate-950 overflow-y-scroll overflow-x-hidden text-white`}
+        className={`antialiased bg-slate-950 overflow-y-scroll overflow-x-hidden`}
       >
         <ApolloWrapper>{children}</ApolloWrapper>
       </body>
