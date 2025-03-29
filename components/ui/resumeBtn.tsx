@@ -10,7 +10,7 @@ const ResumeButton = () => {
   return (
     <RainbowButton
       onClick={handleEmail}
-      className="bg-blue-500 text-white text-lg font-bold py-4 px-8 rounded hover:bg-blue-700"
+      className="bg-slate-950 text-white text-lg font-bold py-1 px-10 rounded hover:bg-blue-700 flex items-center"
     >
       let's get in touch
       <span className="ml-5 text-xl">

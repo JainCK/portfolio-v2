@@ -3,7 +3,7 @@ import { PiTwitterLogoFill } from "react-icons/pi";
 import { FaLinkedinIn } from "react-icons/fa";
 import TypewriterSmooth from "./typeWrite";
 
-export const Footer = () => {
+export const Contact = () => {
   return (
     <div className="h-auto">
       <TypewriterSmooth />

@@ -1,8 +1,8 @@
-import { About } from "@/components/about";
+import About from "@/components/about";
 import { Hero } from "@/components/hero";
-import { Projects } from "@/components/projects";
+import Projects from "@/components/projects";
 import { Skills } from "@/components/skills";
-import { Footer } from "@/components/footer";
+import { Contact } from "@/components/Contact";
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <About />
-        <Footer />
+        <Contact />
       </div>
     </main>
   );
