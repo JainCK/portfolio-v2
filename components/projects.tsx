@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
-import { gql, useQuery } from '@apollo/client';
-import { motion } from 'framer-motion';
-import { FaGithub } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { gql } from "@apollo/client";
+import { ProjectCard } from "./customui/project-card";
+import type { GitHubProject } from "@/lib/types";
+import client from "@/lib/apollo-client";
 
-// GraphQL query to get pinned projects
 const GET_PINNED_PROJECTS = gql`
   query {
     user(login: "JainCK") {
@@ -34,79 +35,90 @@ const GET_PINNED_PROJECTS = gql`
   }
 `;
 
-// Component to list the pinned projects
-const ProjectsList: React.FC = () => {
-  const { loading, error, data } = useQuery(GET_PINNED_PROJECTS);
+export default function Projects() {
+  const [projects, setProjects] = useState<GitHubProject[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const { data } = await client.query({
+          query: GET_PINNED_PROJECTS,
+        });
 
-  const pinnedProjects = data.user.pinnedItems.edges;
+        const pinnedProjects = data.user.pinnedItems.edges.map(
+          ({ node }: any) => ({
+            id: node.id,
+            name: node.name,
+            description: node.description,
+            url: node.url,
+            topics: node.repositoryTopics.edges.map(
+              ({ node }: any) => node.topic.name
+            ),
+          })
+        );
+
+        setProjects(pinnedProjects);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching GitHub projects:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {pinnedProjects.map((project: any) => (
-        <motion.div 
-          key={project.node.id} 
-          className="bg-gray-800 p-6 rounded-lg shadow-md text-white"
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.5 }}
-        >
-          <div className='flex justify-between'>
-            <h3 className="text-xl font-bold mb-2">{project.node.name.toUpperCase()}</h3>
-            <a href={project.node.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-xl">
-              <FaGithub />
-            </a>
+    <section id="projects" className="py-20 bg-slate-950">
+      <div className="container px-4 mx-auto">
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-3xl font-bold tracking-tight mb-4 text-slate-200"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Featured Projects
+          </motion.h2>
+          <motion.p
+            className="text-slate-400 max-w-2xl mx-auto text-md"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            A collection of my pinned repositories from GitHub showcasing my
+            skills and interests.
+          </motion.p>
+        </div>
+
+        {loading ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
           </div>
-          <ProjectDescription description={project.node.description} />
-          <div className="mb-4">
-            {project.node.repositoryTopics.edges.map((topicEdge: any) => (
-              <span key={topicEdge.node.topic.name} className="inline-block bg-slate-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-                {topicEdge.node.topic.name.toUpperCase()}
-              </span>
+        ) : (
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-};
-
-// Component to show project description with expandable text
-const ProjectDescription: React.FC<{ description: string | null }> = ({ description }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
-  if (!description) {
-    return <p className="text-sm mb-4">No description available.</p>;
-  }
-
-  const words = description.split(' ');
-  const shortDescription = words.slice(0, 10).join(' ');
-
-  return (
-    <p className="text-sm mb-4">
-      {isExpanded ? description : `${shortDescription}...`}
-      {words.length > 10 && (
-        <span
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="text-blue-500 hover:underline cursor-pointer"
-        >
-          {isExpanded ? ' Show less' : ' Read more'}
-        </span>
-      )}
-    </p>
-  );
-};
-
-// Main Projects component
-export const Projects: React.FC = () => {
-  return (
-    <section id="projects" className="py-10 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-center mb-8 text-white">Projects</h2>
-        <ProjectsList />
+          </motion.div>
+        )}
       </div>
     </section>
   );
-};
+}

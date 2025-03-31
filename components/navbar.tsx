@@ -1,52 +1,39 @@
-import React from "react";
-import { FaGithub } from "react-icons/fa";
-import { PiTwitterLogoFill } from "react-icons/pi";
-import { FaLinkedinIn } from "react-icons/fa";
+"use client";
+
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+
+// import { FaGithub } from "react-icons/fa";
+// import { PiTwitterLogoFill } from "react-icons/pi";
+// import { FaLinkedinIn } from "react-icons/fa";
 
 export const Navbar = () => {
+  const navItems = [
+    {
+      name: "Projects",
+      link: "#projects",
+      icon: <IconHome className="h-4 w-4 text-white" />,
+    },
+    {
+      name: "Skills",
+      link: "#skills",
+      icon: <IconMessage className="h-4 w-4 text-white" />,
+    },
+    {
+      name: "About",
+      link: "#about",
+      icon: <IconUser className="h-4 w-4 text-white" />,
+    },
+    {
+      name: "Contact",
+      link: "#Footer",
+      icon: <IconMessage className="h-4 w-4 text-white" />,
+    },
+  ];
+
   return (
-    <nav className="anton-regular px-24 py-10 hidden md:flex justify-between items-center fixed top-0 left-0 right-0 z-50 text-black">
-      <div className="text-2xl font-bold">@jain</div>
-      <ul className="hidden md:flex space-x-4">
-        <li>
-          <a href="#projects" className="hover:underline">
-            Projects
-          </a>
-        </li>
-        <li>
-          <a href="#skills" className="hover:underline">
-            Skills
-          </a>
-        </li>
-        <li>
-          <a href="#about" className="hover:underline">
-            About
-          </a>
-        </li>
-      </ul>
-      <div className="flex space-x-2 text-xl md:text-2xl">
-        <a
-          href="https://twitter.com/jain_kuriakose"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <PiTwitterLogoFill />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jainck"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedinIn />
-        </a>
-        <a
-          href="https://github.com/JainCK"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub />
-        </a>
-      </div>
-    </nav>
+    <div className="relative  w-full">
+      <FloatingNav navItems={navItems} />
+    </div>
   );
 };

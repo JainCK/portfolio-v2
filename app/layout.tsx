@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
+
 import { ApolloWrapper } from "@/components/apolloWrapper";
 
 export const metadata: Metadata = {
@@ -18,12 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-white overflow-y-scroll overflow-x-hidden px-4 sm:px-24`}
+        className={`antialiased bg-slate-950 overflow-y-scroll overflow-x-hidden`}
       >
-        <ApolloWrapper>
-          <Navbar />
-          {children}
-        </ApolloWrapper>
+        <ApolloWrapper>{children}</ApolloWrapper>
       </body>
     </html>
   );
