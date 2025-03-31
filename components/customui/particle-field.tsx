@@ -31,8 +31,8 @@ export const ParticleField = () => {
       color: string;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * (canvas?.width ?? 0);
+        this.y = Math.random() * (canvas?.height ?? 0);
         this.size = Math.random() * 1.5 + 0.5;
         this.speedX = Math.random() * 0.2 - 0.1;
         this.speedY = Math.random() * 0.2 - 0.1;
@@ -43,11 +43,11 @@ export const ParticleField = () => {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x < 0 || this.x > canvas.width) {
+        if (this.x < 0 || this.x > (canvas?.width ?? 0)) {
           this.speedX = -this.speedX;
         }
 
-        if (this.y < 0 || this.y > canvas.height) {
+        if (this.y < 0 || this.y > (canvas?.height ?? 0)) {
           this.speedY = -this.speedY;
         }
       }
