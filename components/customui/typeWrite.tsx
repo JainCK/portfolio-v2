@@ -1,6 +1,5 @@
 "use client";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import ResumeButton from "@/components/customui/resumeBtn";
 
 export default function TypewriterSmooth() {
   const words = [
@@ -35,16 +34,8 @@ export default function TypewriterSmooth() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center mt-32">
-      <p className="text-white text-lg font-semibold">
-        Ready to take your digital presence to the next level?
-      </p>
+    <div className="flex flex-col items-center justify-center ">
       <TypewriterEffectSmooth words={words} />
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-        <div className="mt-8 text-center">
-          <ResumeButton />
-        </div>
-      </div>
     </div>
   );
 }
